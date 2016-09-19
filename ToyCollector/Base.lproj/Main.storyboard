@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KNe-JF-Lpt">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ToyCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,9 +20,102 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ahZ-01-Gnz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Eeh-vH-Z66">
+                            <connections>
+                                <segue destination="4zO-hs-aTc" kind="show" id="v2Y-Jk-Gbd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1009" y="778"/>
+        </scene>
+        <!--Toy View Controller-->
+        <scene sceneID="xlj-ld-G4K">
+            <objects>
+                <viewController id="4zO-hs-aTc" customClass="ToyViewController" customModule="ToyCollector" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xsd-ix-PYd"/>
+                        <viewControllerLayoutGuide type="bottom" id="QoZ-yK-Gbs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zBy-cg-VVK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ToyCollector.png" translatesAutoresizingMaskIntoConstraints="NO" id="IlC-BT-fnN">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="3Af-cL-vPB"/>
+                                    <constraint firstAttribute="height" constant="150" id="KTb-H2-oEo"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title of Toy" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kMN-Rv-S4d">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccm-Uk-r2k">
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="4zO-hs-aTc" eventType="touchUpInside" id="c6G-VM-slg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ccm-Uk-r2k" firstAttribute="centerX" secondItem="zBy-cg-VVK" secondAttribute="centerX" id="0eN-cD-Ozt"/>
+                            <constraint firstItem="IlC-BT-fnN" firstAttribute="centerX" secondItem="zBy-cg-VVK" secondAttribute="centerX" id="NYr-bp-vg2"/>
+                            <constraint firstItem="kMN-Rv-S4d" firstAttribute="centerX" secondItem="zBy-cg-VVK" secondAttribute="centerX" id="P36-Z3-iZE"/>
+                            <constraint firstItem="kMN-Rv-S4d" firstAttribute="top" secondItem="IlC-BT-fnN" secondAttribute="bottom" constant="62" id="SRm-cD-jfI"/>
+                            <constraint firstItem="IlC-BT-fnN" firstAttribute="top" secondItem="Xsd-ix-PYd" secondAttribute="bottom" constant="20" id="Z3P-fG-fPt"/>
+                            <constraint firstItem="ccm-Uk-r2k" firstAttribute="top" secondItem="kMN-Rv-S4d" secondAttribute="bottom" constant="30" id="ZaA-FP-QjF"/>
+                            <constraint firstItem="kMN-Rv-S4d" firstAttribute="width" secondItem="IlC-BT-fnN" secondAttribute="width" id="qgX-fi-DUp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cfy-C5-MPr">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="tww-d3-xfW">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="4zO-hs-aTc" id="eeW-Q2-YFr"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Photos" id="Ohl-eu-0eS">
+                                <connections>
+                                    <action selector="photosTapped:" destination="4zO-hs-aTc" id="9V6-Ic-X4C"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="titleTextField" destination="kMN-Rv-S4d" id="PgA-fC-kvs"/>
+                        <outlet property="toyimageView" destination="IlC-BT-fnN" id="8Eg-hm-pDb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1x1-Yh-gcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1727" y="775"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="U3y-R8-olO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KNe-JF-Lpt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GHQ-vs-IoI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="61x-1v-n05"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pc6-Cx-tuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="777.66116941529242"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ToyCollector.png" width="280" height="150"/>
+    </resources>
 </document>

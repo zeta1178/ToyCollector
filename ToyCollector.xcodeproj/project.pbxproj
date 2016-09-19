@@ -13,6 +13,8 @@
 		AB4E83E71D90364400E30841 /* ToyCollector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB4E83E51D90364400E30841 /* ToyCollector.xcdatamodeld */; };
 		AB4E83E91D90364400E30841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4E83E81D90364400E30841 /* Assets.xcassets */; };
 		AB4E83EC1D90364400E30841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB4E83EA1D90364400E30841 /* LaunchScreen.storyboard */; };
+		AB4E83F41D903D8000E30841 /* ToyCollector.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4E83F31D903D8000E30841 /* ToyCollector.png */; };
+		AB4E83F61D903F3E00E30841 /* ToyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E83F51D903F3E00E30841 /* ToyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		AB4E83E81D90364400E30841 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB4E83EB1D90364400E30841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB4E83ED1D90364400E30841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB4E83F31D903D8000E30841 /* ToyCollector.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToyCollector.png; sourceTree = "<group>"; };
+		AB4E83F51D903F3E00E30841 /* ToyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				AB4E83DE1D90364400E30841 /* AppDelegate.swift */,
 				AB4E83E01D90364400E30841 /* ViewController.swift */,
+				AB4E83F51D903F3E00E30841 /* ToyViewController.swift */,
 				AB4E83E21D90364400E30841 /* Main.storyboard */,
+				AB4E83F31D903D8000E30841 /* ToyCollector.png */,
 				AB4E83E81D90364400E30841 /* Assets.xcassets */,
 				AB4E83EA1D90364400E30841 /* LaunchScreen.storyboard */,
 				AB4E83ED1D90364400E30841 /* Info.plist */,
@@ -129,6 +135,7 @@
 			files = (
 				AB4E83EC1D90364400E30841 /* LaunchScreen.storyboard in Resources */,
 				AB4E83E91D90364400E30841 /* Assets.xcassets in Resources */,
+				AB4E83F41D903D8000E30841 /* ToyCollector.png in Resources */,
 				AB4E83E41D90364400E30841 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB4E83E71D90364400E30841 /* ToyCollector.xcdatamodeld in Sources */,
+				AB4E83F61D903F3E00E30841 /* ToyViewController.swift in Sources */,
 				AB4E83E11D90364400E30841 /* ViewController.swift in Sources */,
 				AB4E83DF1D90364400E30841 /* AppDelegate.swift in Sources */,
 			);
