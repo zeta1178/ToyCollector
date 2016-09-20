@@ -9,26 +9,40 @@
 import UIKit
 
 class ToyViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
+    
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    @IBOutlet weak var addUpdateButton: UIButton!
+    
     @IBOutlet weak var toyimageView: UIImageView!
     
     
     @IBOutlet weak var titleTextField: UITextField!
     
     var imagePicker = UIImagePickerController()
-    
+    var toy : Toy? = nil
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         imagePicker.delegate = self
         
+        if toy != nil {
+            toyimageView.image = UIImage(data: toy!.image as! Data)
+            titleTextField.text = toy!.title
+            addUpdateButton.setTitle("Update", for: .normal )
+        } else {
+            deleteButton.isHidden = true
+        }
+        
     }
-
+    
     
     @IBAction func photosTapped(_ sender: AnyObject) {
-    
+        
         imagePicker.sourceType = .photoLibrary
         
         present(imagePicker, animated: true, completion: nil)
@@ -47,7 +61,7 @@ class ToyViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
-    
+        
     }
     
     
@@ -55,16 +69,30 @@ class ToyViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     @IBAction func addTapped(_ sender: AnyObject) {
         
-        let context = (UIApplication.shared.delegate as!        AppDelegate).persistentContainer.viewContext
+        if toy != nil {
+            toy!.title = titleTextField.text
+            toy!.image = UIImagePNGRepresentation(toyimageView.image!) as NSData?
+        } else {
+            
+            let context = (UIApplication.shared.delegate as!        AppDelegate).persistentContainer.viewContext
+            
+            let toy = Toy(context: context)
+            toy.title = titleTextField.text
+            toy.image = UIImagePNGRepresentation(toyimageView.image!) as NSData?
+        }
         
-        let toy = Toy(context: context)
-        toy.title = titleTextField.text
-        toy.image = UIImagePNGRepresentation(toyimageView.image!) as NSData?
-        
-        (UIApplication.shared.delegate as!        AppDelegate).saveContext()
-        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
         
     }
     
+    @IBAction func deleteButton(_ sender: AnyObject) {
+        let context = (UIApplication.shared.delegate as!        AppDelegate).persistentContainer.viewContext
+        
+        context.delete(toy!)
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        navigationController!.popViewController(animated: true)
+        
+    }
 }

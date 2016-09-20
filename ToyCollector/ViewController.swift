@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -47,5 +47,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let toy = toys[indexPath.row]
+        performSegue(withIdentifier: "toySegue", sender: toy)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! ToyViewController
+        nextVC.toy = sender as? Toy
+    }
+    
 }
 
