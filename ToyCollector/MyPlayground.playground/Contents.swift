@@ -1,5 +1,7 @@
-//: Playground - noun: a place where people can play
+var dogs : [String:Int] = ["Fido": 8, "Sally": 12, "Sean": 33]
 
-import UIKit
+dogs ["Hairy"] = 55
 
-var str = "Hello, playground"
+dogs.removeValue(forKey: "Sally")
+
+dogs

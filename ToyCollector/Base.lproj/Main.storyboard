@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ToyCollector" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="ToyCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,7 +18,23 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fhx-iF-t8a">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fhx-iF-t8a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BP0-7u-1wt"/>
+                            <constraint firstItem="Fhx-iF-t8a" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FJf-LH-Ei1"/>
+                            <constraint firstAttribute="trailing" secondItem="Fhx-iF-t8a" secondAttribute="trailing" id="JxX-gy-NZm"/>
+                            <constraint firstItem="Fhx-iF-t8a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KA6-UA-sjY"/>
+                            <constraint firstItem="Fhx-iF-t8a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LqP-ZJ-Og7"/>
+                            <constraint firstItem="Fhx-iF-t8a" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="PJC-6n-IZ7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fhx-iF-t8a" secondAttribute="bottom" id="fV7-e3-zTm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fhx-iF-t8a" secondAttribute="bottom" id="oid-OA-4Uq"/>
+                            <constraint firstAttribute="trailing" secondItem="Fhx-iF-t8a" secondAttribute="trailing" id="sS7-Ix-H1W"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ahZ-01-Gnz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Eeh-vH-Z66">
@@ -27,6 +43,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Fhx-iF-t8a" id="deT-bd-nn1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
